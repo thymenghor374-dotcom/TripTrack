@@ -36,7 +36,7 @@ const Hero = () => {
         className="relative mx-auto w-full max-w-7xl px-6 pb-48 pt-40 lg:px-12"
       >
         <motion.p variants={fadeUp} className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur-md" style={body}>
-          <MapPin className="h-4 w-4 text-[#FF6B35]" /> Santorini, Greece
+          <MapPin className="h-4 w-4 text-[#FF6B35]" /> Book your destination
         </motion.p>
         <motion.h1 variants={fadeUp} style={heading} className="max-w-3xl text-5xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
           Book Journeys <br /> Made <span className="text-[#FF6B35]">Simple</span>

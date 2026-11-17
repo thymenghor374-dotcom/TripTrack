@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import Logo from './Logo';
 import { NAV_LINKS } from '../constants/homeConstants';
 import { Search,Menu } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -18,12 +18,16 @@ const Navbar = () => {
           <ul className="hidden items-center gap-8 lg:flex">
             {NAV_LINKS.map((item) => (
               <li key={item.path}>
-                <Link 
+                <NavLink
                   to={item.path}
-                  className='text-sm font-medium text-white/85 transition-colors duration-300 hover:text-[#FF6B35]'
+                  className={({isActive}) => 
+                    `text-sm font-medium transition-colors duration-300 ${isActive
+                      ? 'text-[#FF6B35]' : 'text-white/85 hover:text-[#FF6B35]'
+                    }` 
+                  }
                 >
                   {item.label}
-                </Link>
+                </NavLink>
               </li>
             ))}
           </ul>
