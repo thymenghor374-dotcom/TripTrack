@@ -6,6 +6,7 @@ import Features from '../components/Features';
 import Destinations from '../components/Destinations';
 import PromoBanner from '../components/PromoBanner';
 import { body } from '../constants/homeConstants';
+import FAQ from '../components/FAQ';
 
 const TravelLanding = () => {
   return (
@@ -17,6 +18,7 @@ const TravelLanding = () => {
         <Stats />
         <Features />
         <Destinations />
+        <FAQ/>
         <PromoBanner />
       </main>
     </div>
