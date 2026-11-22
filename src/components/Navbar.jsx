@@ -3,10 +3,12 @@ import Logo from './Logo';
 import { NAV_LINKS } from '../constants/homeConstants';
 import { Search,Menu } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
+import RegisterPopup from './RegisterPopup';
 
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [registerOpen,setRegisterOpen] = useState(false);
   return (
     <header className="absolute top-4 left-0 z-50 w-full">
       <nav
@@ -36,11 +38,13 @@ const Navbar = () => {
           <button aria-label="Search" className="grid h-10 w-10 place-items-center rounded-full text-white/85 transition-all duration-300 hover:bg-white/15">
             <Search className="h-5 w-5" />
           </button>
-          <button className="rounded-full px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-300 hover:text-[#FF6B35]">
+          <button 
+            onClick={() => setRegisterOpen(true)}
+            className="rounded-full px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-300 hover:text-[#FF6B35]">
             Register
           </button>
           <button className="rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-[#0F172A] shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#FF6B35] hover:text-white">
-            Sign In
+            Login
           </button>
         </div>
         <button
@@ -69,7 +73,13 @@ const Navbar = () => {
           </div>
         </div>
       )}
+      <RegisterPopup
+        open={registerOpen}
+        onClose={() => setRegisterOpen(false)}
+      />
     </header>
+
+    
   );
 }
 
