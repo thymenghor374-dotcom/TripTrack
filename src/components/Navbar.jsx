@@ -4,11 +4,13 @@ import { NAV_LINKS } from '../constants/homeConstants';
 import { Search,Menu } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 import RegisterPopup from './RegisterPopup';
+import LoginPopup from './LoginPopup';
 
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [registerOpen,setRegisterOpen] = useState(false);
+  const [loginOpen,setLoginOpen] = useState(false);
   return (
     <header className="absolute top-4 left-0 z-50 w-full">
       <nav
@@ -43,7 +45,9 @@ const Navbar = () => {
             className="rounded-full px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-300 hover:text-[#FF6B35]">
             Register
           </button>
-          <button className="rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-[#0F172A] shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#FF6B35] hover:text-white">
+          <button 
+            onClick={() => setLoginOpen(true)}
+            className="rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-[#0F172A] shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#FF6B35] hover:text-white">
             Login
           </button>
         </div>
@@ -76,6 +80,10 @@ const Navbar = () => {
       <RegisterPopup
         open={registerOpen}
         onClose={() => setRegisterOpen(false)}
+      />
+      <LoginPopup
+        open={loginOpen}
+        onClose={() => setLoginOpen(false)}
       />
     </header>
 

@@ -6,8 +6,6 @@ import HeroRegister from './HeroRegister';
 import FieldRegister from './FieldRegister';
 import { TRUST_BADGES,SOCIALS,list,item } from '../constants/registerComponent';
 
-
-
 const RegisterPopup = ({ open, onClose }) => {
   const [internalOpen, setInternalOpen] = useState(true);
   const isOpen = open ?? internalOpen;
